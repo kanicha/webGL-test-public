@@ -84,6 +84,13 @@
           alert(message);
         });
       };
+
+      if (!String.prototype.replaceAll) {
+        String.prototype.replaceAll = function(search, replacement) {
+        return this.split(search).join(replacement);
+        };
+      }
+
       document.body.appendChild(script);
     </script>
   </body>
